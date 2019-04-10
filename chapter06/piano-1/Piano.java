@@ -11,8 +11,12 @@ public class Piano extends World
     /**
      * Instance Variables (can be used anywhere below)
      */
+    //primitive data type
     int frames;
-    
+    //onject data type [] indicates array
+    String[] studentNames = {"Sarah", "Chelsea", "Jack", "Maxwell", "Gavin", 
+            "Minah", "Jeewoo", "Brandon", "Peter", "Justy"
+        };
     /**
      * Make the piano.
      */
@@ -20,9 +24,11 @@ public class Piano extends World
     {
         super(800, 340, 1);
         
-        // STtart tracking frames
+        // Start tracking frames
         frames =0;
+        
     }
+
     /**
      * act - called repeatedly to create animation
      */
