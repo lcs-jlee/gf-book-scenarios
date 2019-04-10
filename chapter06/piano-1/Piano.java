@@ -32,11 +32,20 @@ public class Piano extends World
     /**
      * act - called repeatedly to create animation
      */
+    
     public void act()
     {
+        //Every secind, say hello to the nex person in the list
+        if (frames % 60==0)
+        {
+            if ( frames/60 <10)
+            {
+                showText("Hello " + studentNames[frames / 60], 400, 170);
+            }
+        }
         //Keep track of the frames
         frames ++;
-        
         showText("" + frames,100, 100);
+        
     }
 }
