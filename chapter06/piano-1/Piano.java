@@ -33,7 +33,11 @@ public class Piano extends World
     
     public void act()
     {
-        //Every secind, say hello to the nex person in the list
+        
+    }
+}
+/**
+ * //Every secind, say hello to the nex person in the list
         if ((frames % 60 == 0) && (frames/60 < 10)) 
         //boolean and -> statements in the conditional run only when both are true.
         {
@@ -43,5 +47,4 @@ public class Piano extends World
         frames ++;
         showText("" + frames,100, 100);
         
-    }
-}
+ */
