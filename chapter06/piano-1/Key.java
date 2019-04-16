@@ -22,8 +22,7 @@ public class Key extends Actor
         key = keyName;
         sound = soundFile;
         //Track the white keys and notes
-        String[] whitekeys = {"a", "s", "d", "f", "g", "h", "i", "j", "k", "l", ";", "'", "\\"};
-        String[] whitenotes = {"3c", "3d", "3e", "3f", "3g", "3a", "3b", "4c", "4d", "4e", "4f"};
+        
     }
 
     /**

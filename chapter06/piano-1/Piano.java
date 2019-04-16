@@ -14,10 +14,9 @@ public class Piano extends World
     //primitive data type
     int frames;
     //onject data type [] indicates array
-    String[] studentNames = {"Sarah", "Chelsea", "Jack", "Maxwell", "Gavin",  "Minah", "Jeewoo", "Brandon", "Peter", "Justy"};
-    /**
-     * Make the piano.
-     */
+    String[] whitekeys = {"a", "s", "d", "f", "g", "h", "i", "j", "k", "l", ";", "'", "\\"};
+    String[] whitenotes = {"3c", "3d", "3e", "3f", "3g", "3a", "3b", "4c", "4d", "4e", "4f"};
+    
     public Piano() 
     {
         super(800, 340, 1);
@@ -34,7 +33,8 @@ public class Piano extends World
     public void act()
     {
         //this bock of code runs once per second untill the end of the whitekeys array
-        if ((frames%60==0) && (frames/60 < 12))
+        //NOTE: whitekeys.length automatically returns the correct number
+        if ((frames%60==0) && (frames/60 < whitekeys.length))
         {
             
         }
