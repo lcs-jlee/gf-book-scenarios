@@ -14,8 +14,8 @@ public class Piano extends World
     //primitive data type
     int frames;
     //onject data type [] indicates array
-    String[] whitekeys = {"a", "s", "d", "f", "g", "h", "i", "j", "k", "l", ";", "'", "\\"};
-    String[] whitenotes = {"3c", "3d", "3e", "3f", "3g", "3a", "3b", "4c", "4d", "4e", "4f"};
+    String[] whiteKeys = {"a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "\\"};
+    String[] whiteNotes = {"3c", "3d", "3e", "3f", "3g", "3a", "3b", "4c", "4d", "4e", "4f","4g"};
     
     public Piano() 
     {
@@ -34,22 +34,18 @@ public class Piano extends World
     {
         //this bock of code runs once per second untill the end of the whitekeys array
         //NOTE: whitekeys.length automatically returns the correct number
-        if ((frames%60==0) && (frames/60 < whitekeys.length))
+        int position = frames/60;
+        if ((frames%60==0) && (position < whiteKeys.length))
         {
-            
+            //assemble the piano by creating each key one by one
+            Key anotherKey = new Key(whiteKeys[position], whiteNotes[position]);
+            //this line actually adds the object to the world
+            //       object      horizontal    vertical
+            addObject(anotherKey, 54 + 63 * position, 140);
+            //show message when we are in the bounds of the array
+            showText("Array index is: " + frames/60, 400, 250);
         }
+        frames ++;
     
     }
 }
-/**
- * //Every secind, say hello to the nex person in the list
-        if ((frames % 60 == 0) && (frames/60 < 10)) 
-        //boolean and -> statements in the conditional run only when both are true.
-        {
-             showText("Hello " + studentNames[frames / 60], 400, 170);
-        }
-        //Keep track of the frames
-        frames ++;
-        showText("" + frames,100, 100);
-        
- */
