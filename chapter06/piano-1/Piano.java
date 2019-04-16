@@ -23,7 +23,7 @@ public class Piano extends World
         super(800, 340, 1);
         
         // Start tracking frames
-        frames =0;
+        
         
     }
 
@@ -33,7 +33,12 @@ public class Piano extends World
     
     public void act()
     {
-        
+        //this bock of code runs once per second untill the end of the whitekeys array
+        if ((frames%60==0) && (frames/60 < 12))
+        {
+            
+        }
+    
     }
 }
 /**

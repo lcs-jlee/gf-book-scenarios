@@ -21,6 +21,9 @@ public class Key extends Actor
         //Initialize the key and sound instance variables
         key = keyName;
         sound = soundFile;
+        //Track the white keys and notes
+        String[] whitekeys = {"a", "s", "d", "f", "g", "h", "i", "j", "k", "l", ";", "'", "\\"};
+        String[] whitenotes = {"3c", "3d", "3e", "3f", "3g", "3a", "3b", "4c", "4d", "4e", "4f"};
     }
 
     /**
@@ -28,6 +31,8 @@ public class Key extends Actor
      */
     public void act()
     {
+        
+        
         //when the key image is not already showing "down"
         //AND
         //the "g"key on the keyboard has been pressed
