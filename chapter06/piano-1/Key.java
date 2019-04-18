@@ -9,20 +9,25 @@ public class Key extends Actor
     //key and sound are object data types -shows in black, type in Capitalized
     private String key;
     private String sound;
+    private boolean keyWhite;
     /**
      * Create a new key.
      * Constructor
      */
-    public Key(String keyName,String soundFile)
+    public Key(String keyName,String soundFile, boolean isKeyWhite)
     {
         //Key begins in the "up" position
         isDown = false;
         
         //Initialize the key and sound instance variables
+        
         key = keyName;
         sound = soundFile;
-        //Track the white keys and notes
-        
+        keyWhite = isKeyWhite;
+        if (keyWhite == false)
+        {
+            setImage("black-key.png");
+        }
     }
 
     /**
@@ -32,20 +37,36 @@ public class Key extends Actor
     {
         
         
-        //when the key image is not already showing "down"
-        //AND
-        //the "g"key on the keyboard has been pressed
-        if (!isDown && Greenfoot.isKeyDown(key))
+        if (keyWhite == true)
         {
-            setImage("white-key-down.png");
-            play();
-            isDown = true;
+            if (!isDown && Greenfoot.isKeyDown(key))
+            {
+                setImage("white-key-down.png");
+                play();
+                isDown = true;
+            }
+            if (isDown == true && !Greenfoot.isKeyDown(key))
+            {
+                setImage("white-key.png");
+                isDown = false;
+            }
         }
-        if (isDown == true && !Greenfoot.isKeyDown(key))
+        else
         {
-            setImage("white-key.png");
-            isDown = false;
+            
+            if (!isDown && Greenfoot.isKeyDown(key))
+            {
+                setImage("black-key-down.png");
+                play();
+                isDown = true;
+            }
+            if (isDown == true && !Greenfoot.isKeyDown(key))
+            {
+                setImage("black-key.png");
+                isDown = false;
+            }
         }
+        
     }
     /**
      * Play the note of this key
