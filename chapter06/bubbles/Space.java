@@ -16,5 +16,19 @@ public class Space extends World
         super(900, 600, 1);
         getBackground().setColor(Color.BLACK);
         getBackground().fill();
+        setUp();
+    }
+    public void act()
+    {
+        //setUp();
+    }
+    private void setUp()
+    {
+        int i =0;
+        while (i <21)
+        {
+            addObject(new Bubble(), 450, 300);
+            i++;
+        }
     }
 }
